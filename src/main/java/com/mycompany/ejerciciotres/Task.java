@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -57,17 +59,20 @@ public class Task {
                 //Ejecutar una consulta Select para obtener datos en la tabla tareas
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM tareas");
                 
+                StringBuilder resultText = new StringBuilder("Tareas:\n");
+                
+                List<String> results = new ArrayList<>();
                 //Recorrer los resultados de la consulta
                 while(resultSet.next()){
                     //Obtiene valores de las columnas por nombre y por indice
-                    int id = resultSet.getInt("id");
-                    String nameTask = resultSet.getString("nameTask");
-                    String descriptionTask = resultSet.getString("descriptionTask");
+                    int id = resultSet.getInt("id");                                       
+                    String name = resultSet.getString("nameTask");
+                    String description = resultSet.getString("descriptionTask");
                     
-                    //Imprimos los valores de cada fila
-                    System.out.println("ID: " +id + ", Nombre de la tarea: " + nameTask + ". " + "Descripcion de la tarea: " + descriptionTask);
-                    
+                    results.add("ID: " + id + "." + "Nombre de la tarea: " + name + "." + "Descripcion de la tarea: " + description);
+                                   
                 }
+                JOptionPane.showMessageDialog(null, String.join("\n", results), "Resultados de la consulta", JOptionPane.INFORMATION_MESSAGE);
                 
             }catch(Exception e){
                 e.printStackTrace();
