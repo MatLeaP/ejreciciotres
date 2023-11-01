@@ -20,7 +20,7 @@ public class Task {
     
     Conexion con = new Conexion();
     
-     public void insertarTarea() throws SQLException{
+     public void createTask() throws SQLException{
         Connection conexion = con.establecerConeccion();
         
         if( con != null ){
@@ -47,7 +47,7 @@ public class Task {
         }
     }
     
-    public void consultarTareas(){
+    public void getTask(){
         //Establecemos la conexion
         Connection conexion = con.establecerConeccion();
         
@@ -81,7 +81,7 @@ public class Task {
         
     }
     
-    public void actualizarTarea(){
+    public void updateTask(){
         //Establecer la conexion a la base de datos
         Connection conexion = con.establecerConeccion();
         
@@ -110,7 +110,7 @@ public class Task {
     
     }
     
-    public void eliminarTarea(){
+    public void deleteTask(){
         Connection conexion = con.establecerConeccion();
         
         if( con != null ){

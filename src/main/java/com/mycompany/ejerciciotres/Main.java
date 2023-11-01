@@ -17,10 +17,10 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         Task task = new Task();
-        //task.insertarTarea();
-        task.consultarTareas();
-        //task.actualizarTarea();
-        //task.eliminarTarea();
+        //task.createTask();
+        task.getTask();
+        //task.updateTask();
+        //task.deleteTask();
         
     }
 }
