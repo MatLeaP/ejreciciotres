@@ -16,10 +16,11 @@ public class Main {
     
 
     public static void main(String[] args) throws SQLException {
-        Conexion con = new Conexion();
-        //con.insertarTarea();
-        //con.consultarTareas();
-        //con.actualizarTarea();
-        con.eliminarTarea();
+        Task task = new Task();
+        //task.insertarTarea();
+        task.consultarTareas();
+        //task.actualizarTarea();
+        //task.eliminarTarea();
+        
     }
 }
